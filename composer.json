@@ -1,0 +1,55 @@
+{
+    "name": "laszlofarkas/wordpress-test-1",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "johnpbloch/wordpress": "^6.4",
+        "wpackagist-plugin/woocommerce": "^8.5",
+        "wpackagist-theme/storefront": "^4.5"
+    },
+    "description": "Wordpress test 1",
+    "autoload": {
+        "psr-4": {
+            "Laszlofarkas\\WordpressTest1\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "web/",
+        "installer-paths": {
+            "web/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "web/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
+
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cp src/htaccess web/.htaccess",
+            "cp src/wp-config.php web/wp-config.php",
+            "cp -R src/my-plugins/* web/wp-content/plugins/",
+            "rm -rf web/wp-content/plugins/akismet",
+            "rm -rf web/wp-content/plugins/hello.php"
+        ],
+        "post-update-cmd": [
+            "cp src/htaccess web/.htaccess",
+            "cp src/wp-config.php web/wp-config.php",
+            "cp -R src/my-plugins/* web/wp-content/plugins/",
+            "rm -rf web/wp-content/plugins/akismet",
+            "rm -rf web/wp-content/plugins/hello.php"
+        ]
+    }
+}

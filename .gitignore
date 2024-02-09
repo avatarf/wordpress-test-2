@@ -1,0 +1,31 @@
+# Ignore Composer dependencies
+vendor/
+web/
+
+# Ignore WordPress core files
+/wp-admin/
+/wp-includes/
+
+# Ignore WordPress backup files
+*.sql
+*.sql.gz
+*.zip
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore build artifacts
+/build/
+/dist/

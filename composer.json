@@ -40,6 +40,7 @@
         "post-install-cmd": [
             "cp src/htaccess web/.htaccess",
             "cp src/wp-config.php web/wp-config.php",
+            "cp src/phpinfo.php web/phpinfo.php",
             "cp -R src/my-plugins/* web/wp-content/plugins/",
             "rm -rf web/wp-content/plugins/akismet",
             "rm -rf web/wp-content/plugins/hello.php"
@@ -47,6 +48,7 @@
         "post-update-cmd": [
             "cp src/htaccess web/.htaccess",
             "cp src/wp-config.php web/wp-config.php",
+            "cp src/phpinfo.php web/phpinfo.php",
             "cp -R src/my-plugins/* web/wp-content/plugins/",
             "rm -rf web/wp-content/plugins/akismet",
             "rm -rf web/wp-content/plugins/hello.php"
